@@ -4,9 +4,45 @@ function Avatar() {
   return <img className="avatar" src="avatar.jpeg" alt="Pedro Souza" />;
 }
 
+function SkillList() {
+  return (
+    <div className="skill-list">
+      <Skill name="Ruby" level="advanced" color="red" />
+      <Skill name="Rails" level="advanced" color="maroon" />
+      <Skill name="Javascript" level="intermediate" color="yellow" />
+      <Skill name="React" level="beginner" color="cyan" />
+      <Skill name="Elixir" level="intermediate" color="purple" />
+      <Skill name="DevOps" level="intermediate" color="gray" />
+    </div>
+  );
+}
+
+function Skill(props) {
+  let levelEmoji = null;
+  switch (props.level) {
+    case "beginner":
+      levelEmoji = "👶";
+      break;
+    case "intermediate":
+      levelEmoji = "👍";
+      break;
+    case "advanced":
+      levelEmoji = "💪";
+      break;
+    default:
+      levelEmoji = "👻";
+  }
+
+  return (
+    <div className="skill" style={{ backgroundColor: props.color }}>
+      {props.name} {levelEmoji}
+    </div>
+  );
+}
+
 function Summary() {
   return (
-    <div className="data">
+    <div>
       <h1>Pedro Souza</h1>
       <p>
         About Experienced and driven professional in the field of technology and
@@ -32,7 +68,10 @@ function App() {
   return (
     <div className="card">
       <Avatar />
-      <Summary />
+      <div className="data">
+        <Summary />
+        <SkillList />
+      </div>
     </div>
   );
 }
