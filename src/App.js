@@ -1,4 +1,7 @@
 import "./App.css";
+import Avatar from "./Avatar";
+import SkillList from "./SkillList";
+import Summary from "./Summary";
 
 const profileData = {
   name: "Pedro Souza",
@@ -13,54 +16,6 @@ const profileData = {
     { name: "DevOps", level: "intermediate", color: "gray" },
   ],
 };
-
-function Avatar() {
-  return <img className="avatar" src="avatar.jpeg" alt="Pedro Souza" />;
-}
-
-function SkillList(props) {
-  return (
-    <div className="skill-list">
-      {props.skills.map((skill) => {
-        return (
-          <Skill name={skill.name} level={skill.level} color={skill.color} />
-        );
-      })}
-    </div>
-  );
-}
-
-function Skill(props) {
-  let levelEmoji = null;
-  switch (props.level) {
-    case "beginner":
-      levelEmoji = "👶";
-      break;
-    case "intermediate":
-      levelEmoji = "👍";
-      break;
-    case "advanced":
-      levelEmoji = "💪";
-      break;
-    default:
-      levelEmoji = "👻";
-  }
-
-  return (
-    <div className="skill" style={{ backgroundColor: props.color }}>
-      {props.name} {levelEmoji}
-    </div>
-  );
-}
-
-function Summary(props) {
-  return (
-    <div>
-      <h1>{props.name}</h1>
-      <p>{props.description}</p>
-    </div>
-  );
-}
 
 function App() {
   return (
