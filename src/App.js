@@ -1,7 +1,7 @@
 import "./App.css";
-import Avatar from "./Avatar";
-import SkillList from "./SkillList";
-import Summary from "./Summary";
+import Avatar from "./components/Avatar";
+import SkillList from "./components/SkillList";
+import Summary from "./components/Summary";
 
 const profileData = {
   name: "Pedro Souza",

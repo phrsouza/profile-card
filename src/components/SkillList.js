@@ -1,4 +1,4 @@
-import "./App.css";
+import "../App.css";
 import Skill from "./Skill";
 
 function SkillList(props) {

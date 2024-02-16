@@ -1,4 +1,4 @@
-import "./App.css";
+import "../App.css";
 
 function Skill(props) {
   let levelEmoji = null;
